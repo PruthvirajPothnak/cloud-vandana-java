@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort array in Decending Order</title>
+    </head>
+    <body>
+        <script>
+            function sortArrayDescending(arr) {
+            arr.sort(function(a, b) {
+                return b - a;
+            });
+                return arr;
+            }
+            let inputString = prompt("Enter numbers separated by commas:");
+            let inputArray = inputString.split(',').map(Number);
+            let sortedDescending = sortArrayDescending(inputArray);
+
+            document.write("Sorted array in descending order: ", sortedDescending);
+        </script>
+    </body>
+</html>

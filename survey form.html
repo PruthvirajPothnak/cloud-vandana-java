@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validations</title>
+        <link rel="stylesheet" href="survey form.css">
+        <script src="survey form.js"></script>
+        <h1>Survey Form</h1>
+    </head>
+    
+    <body>
+        <form id="surveyForm" name="ExcelRForms" onsubmit="return validateForm()">
+            <table>
+                <!-- FIRST NAME -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">First Name <span>*</span></label>
+                    </td>
+                    <td>
+                        <input type="text" name="fname" placeholder="enter first name" id="firstName" class="box">
+                    </td>
+                    <td>
+                        <span id="fname_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- LAST NAME -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Last Name <span>*</span></label>
+                    </td>
+                    <td>
+                        <input type="text" name="lname" placeholder="enter last name" id="lastName" class="box">
+                    </td>
+                    <td>
+                        <span id="lname_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- DOB -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Date of Birth <span>*</span></label>
+                    </td>
+                    <td>
+                        <input type="date" name="dob" class="box" id="dob" required>
+                    </td>
+                    <td>
+                        <span id="dob_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- COUNTRY -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Country <span>*</span></label>
+                    </td>
+                    <td>
+                        <select id="country" class="box" required>
+                            <option value="Not specified">--Select Country--</option>
+                            <option value="albania">Albania</option>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="egypt">Egypt</option>
+                            <option value="france">France</option>
+                            <option value="india">India</option>
+                            <option value="japan">Japan</option>
+                            <option value="south Africa">South Africa</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span id="country_errors"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Gender<span>*</span></label>
+                    </td>
+                    <td>
+                        <input id="male" type="checkbox" value="Male" name="gender">
+                        <label>Male</label>
+                        <input id="female" type="checkbox" value="Female" name="gender">
+                        <label>Female</label>
+                        <input id="other" type="checkbox" value="Other" name="gender">
+                        <label>Other</label>
+                    </td>
+                    <td>
+                        <span id="gender_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- PROFESSION -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Profession <span>*</span></label>
+                    </td>
+                    <td>
+                        <input id="profession" type="text" id="profession" class="box" required>
+                    </td>
+                    <td>
+                        <span id="profession_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- EMAIL -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Email<span>*</span></label>
+                    </td>
+                    <td>
+                        <input id="email" type="email" name="emailid" placeholder="enter your email" class="box">
+                    </td>
+                    <td>
+                        <span id="email_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- MOBILE NUMBER -->
+                <tr>
+                    <td>
+                        <label style="font-weight: bold;">Mobile No.<span>*</span></label>
+                    </td>
+                    <td>
+                        <input id="mobile" type="number" name="mobile" placeholder="enter your mobile number" class="box">
+                    </td>
+                    <td>
+                        <span id="mobile_errors"></span>
+                    </td>
+                </tr>
+
+                <!-- SUBMIT/RESET BUTTON -->
+                <tr>
+                    <td>
+                        <button type="submit">Submit</button>
+                    </td>
+                    <td>
+                        <button type="button" class="reset" onclick="resetForm()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="popup"></div>
+    </body>
+</html>

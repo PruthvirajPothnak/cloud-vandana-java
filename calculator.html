@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cal</title>
+        <style>
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                background-color: gainsboro;
+            }
+
+            .calculator{
+                width: 350px;
+                background-color: #ffffff;
+                padding: 10px;
+            }
+
+            .input-container {
+                    display: flex;
+            }
+
+            #display {
+                flex: 1;
+                margin-right: 10px;
+                padding: 10px;
+                font-size: 25px;
+                text-align: left;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+                height: 30px;
+                width: 0px;
+            }
+
+            .buttons{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            button{
+                padding: 15px;
+                font-size: 18px;
+                text-align: center;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: black;
+                color: white;
+            }
+
+            .operator{
+                background-color: gray;
+                font-size: 25px;
+            }
+
+            button:hover{
+                background-color: #45a049;
+            }
+            
+            .special {
+                flex-shrink: 0;
+                width: 80px;
+                background-color: green;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="input-container">
+                <input type="text" id="display" readonly>
+                <button class="special" onclick="clearDisplay()">AC</button>
+            </div><br>
+            
+            <div class="buttons">
+                
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('+')" class="operator">+</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')" class="operator">-</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('2')">3</button>
+                <button onclick="appendToDisplay('/')" class="operator">÷</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="calculateResult()">=</button>
+                <button onclick="appendToDisplay('*')" class="operator">×</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        let display = document.getElementById('display');
+
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+
+    </script>
+</html>

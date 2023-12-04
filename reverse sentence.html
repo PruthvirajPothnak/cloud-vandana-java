@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reverse Sentence</title>
+    </head>
+    <body>
+        <script>
+            function reverseWords(sentence){   
+                let words = sentence.split(' ');
+                let reversedWords = words.map(word => reverseString(word));
+                let reversedSentence = reversedWords.join(' ');
+                return reversedSentence;
+            }
+
+            function reverseString(str){
+                return str.split('').reverse().join('');
+            }
+            let inputSentence = prompt("Enter a sentence:");
+            let reversedResult = reverseWords(inputSentence);
+            document.write("Reversed sentence:", reversedResult);
+        </script>
+    </body>
+</html>
